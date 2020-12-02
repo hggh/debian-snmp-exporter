@@ -1,0 +1,9 @@
+[Unit]
+Description=SNMP Exporter
+
+[Service]
+EnvironmentFile=/etc/default/snmp_exporter
+ExecStart=/usr/bin/snmp_exporter --config.file="/etc/prometheus/snmp_exporter.yml" $OPTIONS
+
+[Install]
+WantedBy=multi-user.target
